@@ -170,7 +170,7 @@ public class FormateurController implements Initializable {
 
         }
           Notifications.create().title("NOTIFICATIONS")
-                    .text("Formation Ajoutée")
+                    .text("Formateur Ajoutée")
                     .showInformation();
 
     }
@@ -218,7 +218,7 @@ public class FormateurController implements Initializable {
             }
         }
           Notifications.create().title("NOTIFICATIONS")
-                    .text("Formation Modifiée")
+                    .text("Formateur Modifiée")
                     .showInformation();
     }
 
@@ -254,7 +254,7 @@ public class FormateurController implements Initializable {
             }
         }
         Notifications.create().title("NOTIFICATIONS")
-                    .text("Formation supprimée")
+                    .text("Formateur supprimée")
                     .showInformation();
     }
 
@@ -276,8 +276,8 @@ public class FormateurController implements Initializable {
     @FXML
     private void envoyermail(ActionEvent event) {
        
-        String username = "bacem.mallek999@gmail.com";
-                                String password = "tpqcsexqslpycdxf";
+        String username = "oumaima.majdoub@esprit.tn";
+                                String password = "vrbgxvceyzhtspwa"; 
                                 Properties props = new Properties();
                                 Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
                                 props.put("mail.smtp.port", "465");
@@ -305,7 +305,7 @@ public class FormateurController implements Initializable {
                                     message.setFrom(new InternetAddress("bacem.mallek999@gmail.com"));
                                     message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("yosra.zaouali@esprit.tn") );
                                     message.setSubject("Formateur");
-                                    String htmlcode ="<h1> Vous appartenez officiellement à notre entreprise! </h1>"
+                                    String htmlcode ="<h1> ce formateur appartient officiellement à notre entreprise! </h1>"
                                             
                                             ;
                                     message.setContent(htmlcode, "text/html");                   

@@ -81,8 +81,6 @@ public class InscriptionController implements Initializable {
 
     Formationservices formationservice = new Formationservices();
     @FXML
-    private TextField tfnombre;
-    @FXML
     private Button formateurpage;
     @FXML
     private Label nbtfORMATON;
@@ -178,7 +176,7 @@ public class InscriptionController implements Initializable {
             }
         }
         Notifications.create().title("NOTIFICATIONS")
-                    .text("Formation Ajoutée")
+                    .text("Formation supprimée")
                     .showInformation();
 
     }

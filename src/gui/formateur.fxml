@@ -11,29 +11,29 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FormateurController">
+<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="865.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FormateurController">
    <children>
-      <ImageView fitHeight="634.0" fitWidth="700.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="634.0" fitWidth="669.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../edu2/esprit/img/Yellow%20We%20Are%20Hiring.png" />
          </image>
       </ImageView>
       <TextField fx:id="Anomf" layoutX="127.0" layoutY="209.0" />
       <TextField fx:id="Aprenomf" layoutX="127.0" layoutY="243.0" />
-      <TextField fx:id="Astatus" layoutX="381.0" layoutY="200.0" />
+      <TextField fx:id="Astatus" layoutX="379.0" layoutY="243.0" />
       <TextField fx:id="Atlf" layoutX="127.0" layoutY="284.0" />
-      <TextField fx:id="Amail" layoutX="381.0" layoutY="243.0" />
+      <TextField fx:id="Amail" layoutX="379.0" layoutY="208.0" />
       <TextField fx:id="Adipkome" layoutX="379.0" layoutY="284.0" />
-      <TextField fx:id="Abio" layoutX="651.0" layoutY="200.0" />
+      <TextField fx:id="Abio" layoutX="127.0" layoutY="324.0" />
       <TableView fx:id="tableformateur" layoutX="302.0" layoutY="356.0" prefHeight="255.0" prefWidth="556.0">
         <columns>
-          <TableColumn fx:id="nomformateur" prefWidth="75.0" text="Nom formateur :" />
-          <TableColumn fx:id="tfprenom" prefWidth="75.0" text="Prenom formateur :" />
-            <TableColumn fx:id="tfstatus" prefWidth="75.0" text="Status :" />
-            <TableColumn fx:id="tfdiplome" prefWidth="75.0" text="Diplome :" />
-            <TableColumn fx:id="tftelephone" prefWidth="75.0" text="Telephone : " />
-            <TableColumn fx:id="tfbio" prefWidth="75.0" text="Bio :" />
-            <TableColumn fx:id="tfemail" prefWidth="75.0" text="Email :" />
+          <TableColumn fx:id="nomformateur" prefWidth="105.0" text="Nom formateur :" />
+          <TableColumn fx:id="tfprenom" prefWidth="127.0" text="Prenom formateur :" />
+            <TableColumn fx:id="tfstatus" minWidth="0.0" prefWidth="61.0" text="Status :" />
+            <TableColumn fx:id="tfdiplome" prefWidth="82.0" text="Diplome :" />
+            <TableColumn fx:id="tftelephone" minWidth="0.0" prefWidth="81.0" text="Telephone : " />
+            <TableColumn fx:id="tfbio" prefWidth="42.0" text="Bio :" />
+            <TableColumn fx:id="tfemail" prefWidth="57.0" text="Email :" />
         </columns>
       </TableView>
       <Button fx:id="ajouterformateur" layoutX="641.0" layoutY="253.0" mnemonicParsing="false" onAction="#ajouterformateur" prefHeight="31.0" prefWidth="103.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Valider">
@@ -52,20 +52,23 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Text layoutX="611.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bio :" />
-      <Text layoutX="325.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status :" />
+      <Text layoutX="79.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bio :" />
+      <Text layoutX="323.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status :" />
       <Text layoutX="23.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom formateur : " />
       <Text layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom formateur :" />
-      <Text layoutX="29.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone :" wrappingWidth="79.576171875" />
-      <Text layoutX="325.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :" />
+      <Text layoutX="39.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone :" wrappingWidth="79.576171875" />
+      <Text layoutX="325.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :" />
       <Text layoutX="317.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diplome :" />
-      <Button fx:id="formationpage" layoutX="115.0" layoutY="572.0" mnemonicParsing="false" onAction="#suivantformation" prefHeight="7.0" prefWidth="103.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Formation">
+      <Button fx:id="formationpage" layoutX="738.0" layoutY="23.0" mnemonicParsing="false" onAction="#suivantformation" prefHeight="7.0" prefWidth="103.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Formation">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="tfenvoyer" layoutX="544.0" layoutY="297.0" mnemonicParsing="false" onAction="#envoyermail" text="Envoyer Mail :" />
-      <Label layoutX="302.0" layoutY="328.0" prefHeight="17.0" prefWidth="149.0" text="Nombre total de formateur:" />
-      <Label fx:id="nbtf" layoutX="461.0" layoutY="328.0" prefHeight="17.0" prefWidth="34.0" />
+      <Button fx:id="tfenvoyer" layoutX="692.0" layoutY="201.0" mnemonicParsing="false" onAction="#envoyermail" prefHeight="25.0" prefWidth="92.0" text="Envoyer Mail :" />
+      <Label layoutX="127.0" layoutY="524.0" prefHeight="17.0" prefWidth="167.0" text="Nombre total de formateur:">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label fx:id="nbtf" layoutX="185.0" layoutY="557.0" prefHeight="17.0" prefWidth="34.0" />
    </children>
 </AnchorPane>

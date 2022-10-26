@@ -54,14 +54,15 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <TextField fx:id="tfnombre" layoutX="138.0" layoutY="364.0" prefHeight="25.0" prefWidth="174.0" />
-      <Text layoutX="18.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre formation : " />
-      <Button fx:id="formateurpage" layoutX="672.0" layoutY="29.0" mnemonicParsing="false" onAction="#formateursuivant" prefHeight="0.0" prefWidth="109.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Formateur :">
+      <Button fx:id="formateurpage" layoutX="672.0" layoutY="26.0" mnemonicParsing="false" onAction="#formateursuivant" prefHeight="0.0" prefWidth="109.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Formateur :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="194.0" layoutY="433.0" prefHeight="17.0" prefWidth="149.0" text="Nombre total de formation:" />
-      <Label fx:id="nbtfORMATON" layoutX="353.0" layoutY="433.0" prefHeight="17.0" prefWidth="34.0" />
+      <Label layoutX="623.0" layoutY="482.0" prefHeight="17.0" prefWidth="184.0" text="Nombre total de formation:">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label fx:id="nbtfORMATON" layoutX="680.0" layoutY="509.0" prefHeight="17.0" prefWidth="34.0" />
    </children>
 </AnchorPane>
