@@ -71,6 +71,23 @@ public class Formateurservices {
         
     }
 
+    
+    public int nbFormateur() {
+         int n=0;  
+        try {
+            String requete = "SELECT * FROM formateur";
+            PreparedStatement pst = cnx.prepareStatement(requete);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                n = n+1;
+            }
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return n;
+    }
    // @Override
     public void modifier(Formateur t) {
 

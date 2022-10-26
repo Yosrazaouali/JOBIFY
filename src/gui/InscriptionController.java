@@ -7,9 +7,12 @@ package gui;
 
 import entities.Formation;
 import java.io.IOException;
+
 import java.net.URL;
+import java.security.Security;
 import java.sql.Date;
 import java.util.Optional;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,15 +26,24 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javax.mail.Address;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 import org.controlsfx.control.Notifications;
 import services.Formationservices;
+import javax.mail.PasswordAuthentication;
 
 /**
  * FXML Controller class
@@ -72,12 +84,20 @@ public class InscriptionController implements Initializable {
     private TextField tfnombre;
     @FXML
     private Button formateurpage;
+    @FXML
+    private Label nbtfORMATON;
+
+    public void setNbtfORMATON(String nbtfORMATON) {
+        this.nbtfORMATON.setText(nbtfORMATON);;
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         //observable for real time list
 
+        Formationservices ff = new Formationservices();
 
         // Display col data
         tfnomf.setCellValueFactory(new PropertyValueFactory<>("nomfromation"));
@@ -86,6 +106,9 @@ public class InscriptionController implements Initializable {
         tfdateff.setCellValueFactory(new PropertyValueFactory<>("datefin"));
         ObservableList<Formation> list = formationservice.afficher();
         tableviewrf.setItems(list);
+        
+         setNbtfORMATON(Integer.toString(ff.nbFormation()));
+
         // TODO
     }
 
@@ -217,6 +240,8 @@ public class InscriptionController implements Initializable {
 	window.setScene(rcScene);
 	window.show();
     }
+
+
 
 }
 

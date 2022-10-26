@@ -83,6 +83,9 @@ public class Formationservices {
             System.err.println(ex.getMessage());
         }
     }
+    
+    
+    
 //public List<Formation> afficher() {
 
     public ObservableList<Formation> afficher() {
@@ -105,30 +108,23 @@ public class Formationservices {
         return list;
     }
     
+    
+    
+    public int nbFormation() {
+         int n=0;  
+        try {
+            String requete = "SELECT * FROM formation";
+            PreparedStatement pst = cnx.prepareStatement(requete);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                n = n+1;
+            }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return n;
+    }
+     
 }

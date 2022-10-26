@@ -17,7 +17,9 @@ import javafx.scene.control.TextField;
 import services.Formateurservices;
 import entities.Formateur;
 import java.io.IOException;
+import java.security.Security;
 import java.util.Optional;
+import java.util.Properties;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,7 +30,16 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.JOptionPane;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javax.mail.Address;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import org.controlsfx.control.Notifications;
 
 /**
@@ -86,12 +97,23 @@ public class FormateurController implements Initializable {
     private TextField Adipkome;
     @FXML
     private TextField Abio;
+    @FXML
+    private Button tfenvoyer;
+    @FXML
+    private Label nbtf;
 
+    public void setNbtf(String nbtf) {
+        this.nbtf.setText(nbtf);
+    }
+
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        Formateurservices fs = new Formateurservices();
 
         ObservableList<Formateur> list = formateurservice.afficherr();
 
@@ -103,6 +125,9 @@ public class FormateurController implements Initializable {
         tfdiplome.setCellValueFactory(new PropertyValueFactory<>("diplome"));
         tfbio.setCellValueFactory(new PropertyValueFactory<>("bio"));
         tfstatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+        
+        setNbtf(Integer.toString(fs.nbFormateur()));
+
         
 
         // TODO
@@ -248,4 +273,56 @@ public class FormateurController implements Initializable {
 	window.show();
     }
 
-}
+    @FXML
+    private void envoyermail(ActionEvent event) {
+       
+        String username = "bacem.mallek999@gmail.com";
+                                String password = "tpqcsexqslpycdxf";
+                                Properties props = new Properties();
+                                Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
+                                props.put("mail.smtp.port", "465");
+                                props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+                                props.put("mail.smtp.ssl.enable", true); 
+                                props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+                                props.put("mail.smtp.socketFactory.port", "465");
+                                props.put("mail.smtp.socketFactory.fallback", "false");
+                                props.put("mail.smtp.host", "smtp.gmail.com");
+                                props.put("mail.smtp.auth", "true");
+                                props.setProperty("mail.debug", "true");
+                                props.setProperty("mail.transport.protocol", "smtp");
+                                props.put("mail.smtp.starttls.enable", "true"); 
+                                Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+
+                                    protected PasswordAuthentication getPasswordAuthentication() {
+                                        return new PasswordAuthentication(username, password);
+                                    }
+                                });
+
+                                try {
+                                    Address a = new InternetAddress("bacem.mallek999@gmail.com");
+      
+                                    Message message = new MimeMessage(session);
+                                    message.setFrom(new InternetAddress("bacem.mallek999@gmail.com"));
+                                    message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("yosra.zaouali@esprit.tn") );
+                                    message.setSubject("Formateur");
+                                    String htmlcode ="<h1> Vous appartenez officiellement à notre entreprise! </h1>"
+                                            
+                                            ;
+                                    message.setContent(htmlcode, "text/html");                   
+                                    Transport.send(message);
+                                } catch (MessagingException mex) {
+                                    System.out.println(" failed, exception: " + mex.getMessage());
+                                }
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+
+    }
+
+
