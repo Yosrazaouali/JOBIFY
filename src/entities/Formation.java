@@ -7,7 +7,10 @@ package entities;
 
 //import java.sql.Date;
 
-import java.util.Date;
+import java.sql.Date;
+
+
+
 
 
 /**
@@ -21,16 +24,15 @@ public class Formation {
     private int prixformation ;
     private Date datedebut ;
     private Date datefin ; 
-    
-        public Formation (){}
+
+    public Formation() {
+    }
 
     public Formation(int idformation) {
         this.idformation = idformation;
     }
-        
 
-
-    public Formation(int idformation, String nomfromation, int prixformation , Date datedebut, Date datefin) {
+    public Formation(int idformation, String nomfromation, int prixformation, Date datedebut, Date datefin) {
         this.idformation = idformation;
         this.nomfromation = nomfromation;
         this.prixformation = prixformation;
@@ -45,41 +47,40 @@ public class Formation {
         this.datefin = datefin;
     }
 
- 
     public int getIdformation() {
         return idformation;
-    }
-
-    public String getNomfromation() {
-        return nomfromation;
-    }
-
-    public int getPrixformation() {
-        return prixformation;
-    }
-
-   public Date getDatedebut() {
-        return datedebut;
-    }
-
-    public Date getDatefin() {
-        return datefin;
     }
 
     public void setIdformation(int idformation) {
         this.idformation = idformation;
     }
 
+    public String getNomfromation() {
+        return nomfromation;
+    }
+
     public void setNomfromation(String nomfromation) {
         this.nomfromation = nomfromation;
+    }
+
+    public int getPrixformation() {
+        return prixformation;
     }
 
     public void setPrixformation(int prixformation) {
         this.prixformation = prixformation;
     }
 
+    public Date getDatedebut() {
+        return datedebut;
+    }
+
     public void setDatedebut(Date datedebut) {
         this.datedebut = datedebut;
+    }
+
+    public Date getDatefin() {
+        return datefin;
     }
 
     public void setDatefin(Date datefin) {
@@ -91,7 +92,32 @@ public class Formation {
         return "Formation{" + "idformation=" + idformation + ", nomfromation=" + nomfromation + ", prixformation=" + prixformation + ", datedebut=" + datedebut + ", datefin=" + datefin + '}';
     }
 
+    
+    
+       
+
+   
+   
+
   
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+
+ 
+   
     
     
     

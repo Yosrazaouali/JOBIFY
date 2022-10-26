@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu;
+package gui;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -22,20 +22,20 @@ import javafx.stage.Stage;
  *
  * @author HP
  */
-public class firstwindowDepartement extends Application {
+public class Firstwindow extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-      
         try {
-           Parent root = FXMLLoader.load(getClass().getResource("Inscription.fxml"));
-            Scene scene = new Scene(root, 300, 250);
-            primaryStage.setTitle("Hello World!");
+            Parent root = FXMLLoader.load(getClass().getResource("Inscription.fxml"));
+            Scene scene = new Scene(root );
+            
+            primaryStage.setTitle("formation");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        } 
+          System.out.println(ex.getMessage());
+        }
     }
 
     /**

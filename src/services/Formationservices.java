@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import outils.Mydb;
 import java.sql.Date;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -32,17 +35,13 @@ public class Formationservices {
         try {
             String requete = "INSERT INTO formation(Nomform,Prixform,Datedebut,Datefin) VALUES (?,?,?,?)";
             PreparedStatement pst = new Mydb().getCnx().prepareStatement(requete);
-            java.sql.Date Datedebut = new java.sql.Date(t.getDatedebut().getTime());
-            java.sql.Date Datefin = new java.sql.Date(t.getDatefin().getTime());
 
             pst.setString(1, t.getNomfromation());
-            pst.setDate(3, Datedebut);
-            pst.setDate(4, Datefin);
-
+            pst.setDate(3, t.getDatedebut());
+            pst.setDate(4, t.getDatefin());
             pst.setInt(2, t.getPrixformation());
             pst.executeUpdate();
             System.out.println("Formation ajoutée !");
-
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
@@ -69,13 +68,12 @@ public class Formationservices {
         try {
             String requete = "UPDATE formation SET Nomform=?,Prixform=? , Datedebut=? , Datefin=?  WHERE idFormation=?";
             PreparedStatement pst = new Mydb().getCnx().prepareStatement(requete);
-            //java.sql.Date Datedebut = new java.sql.Date(t.getDatedebut().getTime());
-           // java.sql.Date Datefin = new java.sql.Date(t.getDatefin().getTime());
-            
-            
-            pst.setDate(3,(Date)t.getDatedebut());
+            java.sql.Date Datedebut = new java.sql.Date(t.getDatedebut().getTime());
+             java.sql.Date Datefin = new java.sql.Date(t.getDatefin().getTime());
+
+            pst.setDate(3, t.getDatedebut());
             pst.setInt(5, t.getIdformation());
-            pst.setDate(4,(Date)t.getDatefin());
+            pst.setDate(4, t.getDatefin());
             pst.setString(1, t.getNomfromation());
             pst.setInt(2, t.getPrixformation());
             pst.executeUpdate();
@@ -85,17 +83,19 @@ public class Formationservices {
             System.err.println(ex.getMessage());
         }
     }
+//public List<Formation> afficher() {
 
-    public List<Formation> afficher() {
-   
-        List<Formation> list = new ArrayList<>();
+    public ObservableList<Formation> afficher() {
+//        ObservableList<Client> myList = FXCollections.observableArrayList();
+//        List<Formation> list = new ArrayList<>();
+        ObservableList<Formation> list = FXCollections.observableArrayList();;
 
         try {
             String requete = "SELECT * FROM Formation";
             PreparedStatement pst = cnx.prepareStatement(requete);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                list.add(new Formation(rs.getInt(1), rs.getString(2), rs.getInt(3) , rs.getDate(4),  rs.getDate(4)));
+                list.add(new Formation(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getDate(4), rs.getDate(4)));
             }
 
         } catch (SQLException ex) {

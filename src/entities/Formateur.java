@@ -6,56 +6,132 @@
 package entities;
 
 import java.util.logging.Logger;
+import javafx.scene.control.TableColumn;
 
 /**
  *
  * @author HP
  */
 public class Formateur {
-    private int idformation;
-    private int Salaireform;
-
-    public Formateur(int Salaireform) {
-        this.Salaireform = Salaireform;
-    }
+    private int idformateur ;
+    private String Nomformateur ;
+    private String Prenomformateur;
+    private int Telephone;
+    private String Bio;
+    private String status;
+    private String Diplome;
+    private String Email;
 
     public Formateur() {
     }
-
-    public Formateur(int idformation, int Salaireform) {
-        this.idformation = idformation;
-        this.Salaireform = Salaireform;
-    }
     
 
-    public int getIdformation() {
-        return idformation;
+    public Formateur(String Nomformateur, String Prenomformateur,  String Bio,int Telephone, String status, String Diplome, String Email) {
+        this.Nomformateur = Nomformateur;
+        this.Prenomformateur = Prenomformateur;
+        this.Telephone = Telephone;
+        this.Bio = Bio;
+        this.status = status;
+        this.Diplome = Diplome;
+        this.Email = Email;
     }
 
-    public void setIdformation(int idformation) {
-        this.idformation = idformation;
+    public Formateur(int idformateur) {
+        this.idformateur = idformateur;
     }
 
-    public int getSalaireform() {
-        return Salaireform;
+    public Formateur(int idformateur, String Nomformateur, String Prenomformateur, String Bio, int Telephone, String status, String Diplome, String Email) {
+        this.idformateur = idformateur;
+        this.Nomformateur = Nomformateur;
+        this.Prenomformateur = Prenomformateur;
+        this.Telephone = Telephone;
+        this.Bio = Bio;
+        this.status = status;
+        this.Diplome = Diplome;
+        this.Email = Email;
     }
 
-    public void setSalaireform(int Salaireform) {
-        this.Salaireform = Salaireform;
+    public int getIdformateur() {
+        return idformateur;
+    }
+
+    public void setIdformateur(int idformateur) {
+        this.idformateur = idformateur;
+    }
+
+    public String getNomformateur() {
+        return Nomformateur;
+    }
+
+    public void setNomformateur(String Nomformateur) {
+        this.Nomformateur = Nomformateur;
+    }
+
+    public String getPrenomformateur() {
+        return Prenomformateur;
+    }
+
+    public void setPrenomformateur(String Prenomformateur) {
+        this.Prenomformateur = Prenomformateur;
+    }
+
+    public int getTelephone() {
+        return Telephone;
+    }
+
+    public void setTelephone(int Telephone) {
+        this.Telephone = Telephone;
+    }
+
+    public String getBio() {
+        return Bio;
+    }
+
+    public void setBio(String Bio) {
+        this.Bio = Bio;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDiplome() {
+        return Diplome;
+    }
+
+    public void setDiplome(String Diplome) {
+        this.Diplome = Diplome;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
     @Override
     public String toString() {
-        return "Formateur{" + "idformation=" + idformation + ", Salaireform=" + Salaireform + '}';
+        return "Formateur{" + "idformateur=" + idformateur + ", Nomformateur=" + Nomformateur + ", Prenomformateur=" + Prenomformateur + ", Telephone=" + Telephone + ", Bio=" + Bio + ", status=" + status + ", Diplome=" + Diplome + ", Email=" + Email + '}';
     }
+    
+    
 
    
+
+    
    
     
     
-     
+
+   
+
     
+  
     
-    
-        
 }
