@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FormateurController">
@@ -16,14 +17,14 @@
             <Image url="@../edu2/esprit/img/Yellow%20We%20Are%20Hiring.png" />
          </image>
       </ImageView>
-      <TextField fx:id="tfBio" layoutX="127.0" layoutY="209.0" />
-      <TextField fx:id="tfStatus" layoutX="127.0" layoutY="243.0" />
-      <TextField fx:id="tfTelephone" layoutX="381.0" layoutY="200.0" />
-      <TextField fx:id="tfNomformateur" layoutX="127.0" layoutY="284.0" />
-      <TextField fx:id="tfEmail" layoutX="381.0" layoutY="243.0" />
-      <TextField fx:id="tfDiplome" layoutX="379.0" layoutY="284.0" />
-      <TextField fx:id="tfPrenom" layoutX="651.0" layoutY="200.0" />
-      <TableView fx:id="tableformateur" layoutX="296.0" layoutY="361.0" prefHeight="264.0" prefWidth="562.0">
+      <TextField fx:id="Anomf" layoutX="127.0" layoutY="209.0" />
+      <TextField fx:id="Aprenomf" layoutX="127.0" layoutY="243.0" />
+      <TextField fx:id="Astatus" layoutX="381.0" layoutY="200.0" />
+      <TextField fx:id="Atlf" layoutX="127.0" layoutY="284.0" />
+      <TextField fx:id="Amail" layoutX="381.0" layoutY="243.0" />
+      <TextField fx:id="Adipkome" layoutX="379.0" layoutY="284.0" />
+      <TextField fx:id="Abio" layoutX="651.0" layoutY="200.0" />
+      <TableView fx:id="tableformateur" layoutX="302.0" layoutY="356.0" prefHeight="255.0" prefWidth="556.0">
         <columns>
           <TableColumn fx:id="nomformateur" prefWidth="75.0" text="Nom formateur :" />
           <TableColumn fx:id="tfprenom" prefWidth="75.0" text="Prenom formateur :" />
@@ -34,16 +35,33 @@
             <TableColumn fx:id="tfemail" prefWidth="75.0" text="Email :" />
         </columns>
       </TableView>
-      <Button fx:id="ajouterformateur" layoutX="690.0" layoutY="293.0" mnemonicParsing="false" onAction="#ajouterformateur" prefHeight="25.0" prefWidth="70.0" text="Valider" />
-      <Button fx:id="modifierformateur" layoutX="783.0" layoutY="256.0" mnemonicParsing="false" onAction="#modifierformateur" text="Modifier" />
-      <Button fx:id="supprimerformateur" layoutX="690.0" layoutY="256.0" mnemonicParsing="false" onAction="#supprimerformateur" text="supprimer" />
-      <Button fx:id="afficherformateur" layoutX="783.0" layoutY="293.0" mnemonicParsing="false" onAction="#afficherformateur" prefHeight="25.0" prefWidth="61.0" text="afficher" />
-      <Text layoutX="606.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bio :" />
+      <Button fx:id="ajouterformateur" layoutX="641.0" layoutY="253.0" mnemonicParsing="false" onAction="#ajouterformateur" prefHeight="31.0" prefWidth="103.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Valider">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="modifierformateur" layoutX="759.0" layoutY="253.0" mnemonicParsing="false" onAction="#modifierformateur" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Modifier">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="supprimerformateur" layoutX="641.0" layoutY="294.0" mnemonicParsing="false" onAction="#supprimerformateur" prefHeight="31.0" prefWidth="103.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="supprimer">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="afficherformateur" layoutX="759.0" layoutY="297.0" mnemonicParsing="false" onAction="#afficherformateur" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="afficher">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Text layoutX="611.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bio :" />
       <Text layoutX="325.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status :" />
       <Text layoutX="23.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom formateur : " />
       <Text layoutX="17.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom formateur :" />
       <Text layoutX="29.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone :" wrappingWidth="79.576171875" />
       <Text layoutX="325.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :" />
       <Text layoutX="317.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diplome :" />
+      <Button fx:id="formationpage" layoutX="115.0" layoutY="572.0" mnemonicParsing="false" onAction="#suivantformation" prefHeight="7.0" prefWidth="103.0" style="-fx-background-color: #ffd344; -fx-background-radius: 15;" text="Formation">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -21,9 +21,9 @@ public class test {
     public static void main(String[] args){
        Mydb.getInstance();
      // Formateur T =new Formateur();
-      // Formateurservices fs= new Formateurservices();
-       //Formateur f = new Formateur("Ypppaaa","aii77i5i","4454545",6,"s","d","g"); 
-       
+       Formateurservices fs= new Formateurservices();
+       Formateur f = new Formateur(21,"Ypppaaa","aii77i5i","4454545","55","s","d","g"); 
+       fs.modifier(f);
        //fs.ajouter(f); 
      // fs.supprimer(2);
        
@@ -32,7 +32,7 @@ public class test {
        //Formateur f = new Formateur(3,"afeeeeeef","souha","sk",8,"kl","yosraaa","kkkkk");
        //T.modifier(f);
        
-        //System.out.println(T.afficherr());
+       // System.out.println(T.afficherr());
        
        
        

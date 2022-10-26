@@ -39,7 +39,7 @@ public class Formateurservices {
             pst.setString(1, t.getNomformateur());
             pst.setString(2, t.getPrenomformateur());
             pst.setString(3, t.getBio());
-            pst.setInt(4, t.getTelephone());
+            pst.setString(4, t.getTelephone());
             pst.setString(5, t.getStatus());
             pst.setString(6, t.getDiplome());
             pst.setString(7, t.getEmail());
@@ -75,18 +75,19 @@ public class Formateurservices {
     public void modifier(Formateur t) {
 
          try {
-            String requete = "UPDATE formateur SET Nomformateur=? ,Prenomformateur=? ,Telephone=? ,Bio=? ,status=?,Diplome=? ,Email=?   WHERE Idformateur=?";
+            String requete = "UPDATE formateur SET Nomformateur=? ,Prenomformateur=? ,Telephone=? ,Bio=? ,status=?,Diplome=? ,Email=?   WHERE idformateur=?";
             PreparedStatement pst = cnx.prepareStatement(requete);
             pst.setInt(8, t.getIdformateur()) ;
             pst.setString(1, t.getNomformateur());
 
             pst.setString(2, t.getPrenomformateur());
             pst.setString(4, t.getBio());
-            pst.setInt(3, t.getTelephone());
+            pst.setString(3, t.getTelephone());
             pst.setString(5, t.getStatus());
             pst.setString(6, t.getDiplome());
             pst.setString(7, t.getEmail()); 
             pst.executeUpdate();
+             System.out.println(t.getIdformateur());
             System.out.println("Formateur modifiée!");
 
         } catch (SQLException ex) {
@@ -106,7 +107,7 @@ public class Formateurservices {
             PreparedStatement pst = cnx.prepareStatement(requete);
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                list.add(new Formateur(rs.getInt(1), rs.getString(2), rs.getString(3) , rs.getString(4) ,rs.getInt(5), rs.getString(6),rs.getString(7) ,rs.getString(8) ));
+                list.add(new Formateur(rs.getInt(1), rs.getString(2), rs.getString(3) , rs.getString(4) ,rs.getString(5), rs.getString(6),rs.getString(7) ,rs.getString(8) ));
             }
 
         } catch (SQLException ex) {

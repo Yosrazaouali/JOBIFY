@@ -6,6 +6,7 @@
 package gui;
 
 import entities.Formation;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.Optional;
@@ -13,7 +14,11 @@ import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -23,7 +28,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 import services.Formationservices;
 
 /**
@@ -63,20 +70,22 @@ public class InscriptionController implements Initializable {
     Formationservices formationservice = new Formationservices();
     @FXML
     private TextField tfnombre;
+    @FXML
+    private Button formateurpage;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         //observable for real time list
-        ObservableList<Formation> list = formationservice.afficher();
-        tableviewrf.setItems(list);
+
 
         // Display col data
         tfnomf.setCellValueFactory(new PropertyValueFactory<>("nomfromation"));
         tfprixf.setCellValueFactory(new PropertyValueFactory<>("prixformation"));
         tfdatefd.setCellValueFactory(new PropertyValueFactory<>("datedebut"));
         tfdateff.setCellValueFactory(new PropertyValueFactory<>("datefin"));
-
+        ObservableList<Formation> list = formationservice.afficher();
+        tableviewrf.setItems(list);
         // TODO
     }
 
@@ -92,7 +101,8 @@ public class InscriptionController implements Initializable {
         if ((tfprix.getText().equals("")) | (tfnom.getText().equals("")) || (datedebut.equals("")) || (datefin.equals(""))) {
             JOptionPane.showMessageDialog(null, "veuillez remplir tous le champs");
         } else {
-            Formation f = new Formation(nom, prix, datedebut, datefin);
+            
+            Formation f = new Formation(nom, prix , datedebut, datefin);
             Formationservices fc = new Formationservices();
             fc.ajouter(f);
 
@@ -108,6 +118,10 @@ public class InscriptionController implements Initializable {
             tfdateff.setCellValueFactory(new PropertyValueFactory<>("datefin"));
 
         }
+         Notifications.create().title("NOTIFICATIONS")
+                    .text("Formation Ajoutée")
+                    .showInformation();
+
 
     }
 
@@ -140,6 +154,10 @@ public class InscriptionController implements Initializable {
                 JOptionPane.showMessageDialog(null, " Failed to delete  ! ");
             }
         }
+        Notifications.create().title("NOTIFICATIONS")
+                    .text("Formation Ajoutée")
+                    .showInformation();
+
     }
 
     @FXML
@@ -183,13 +201,21 @@ public class InscriptionController implements Initializable {
                 JOptionPane.showMessageDialog(null, " Failed to delete  ! ");
             }
         }
+        Notifications.create().title("NOTIFICATIONS")
+                    .text("Formation Modifiée")
+                    .showInformation();
+
     }
-     private void addprix() {
-         
-         
-         
-         
-         
+     
+
+    @FXML
+    private void formateursuivant(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("formateur.fxml"));
+         Scene rcScene= new Scene(root);
+    	
+  	     Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+	window.setScene(rcScene);
+	window.show();
     }
 
 }

@@ -16,13 +16,20 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import services.Formateurservices;
 import entities.Formateur;
+import java.io.IOException;
 import java.util.Optional;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.JOptionPane;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -31,19 +38,12 @@ import javafx.scene.control.Alert;
  */
 public class FormateurController implements Initializable {
 
-    @FXML
     private TextField tfBio;
-    @FXML
     private TextField tfStatus;
-    @FXML
     private TextField tfTelephone;
-    @FXML
     private TextField tfNomformateur;
-    @FXML
     private TextField tfEmail;
-    @FXML
     private TextField tfDiplome;
-    @FXML
     private TextField tfPrenom;
     @FXML
     private TableView<Formateur> tableformateur;
@@ -70,6 +70,22 @@ public class FormateurController implements Initializable {
     @FXML
     private Button afficherformateur;
     Formateurservices formateurservice = new Formateurservices();
+    @FXML
+    private Button formationpage;
+    @FXML
+    private TextField Anomf;
+    @FXML
+    private TextField Aprenomf;
+    @FXML
+    private TextField Astatus;
+    @FXML
+    private TextField Atlf;
+    @FXML
+    private TextField Amail;
+    @FXML
+    private TextField Adipkome;
+    @FXML
+    private TextField Abio;
 
     /**
      * Initializes the controller class.
@@ -86,6 +102,8 @@ public class FormateurController implements Initializable {
         tfemail.setCellValueFactory(new PropertyValueFactory<>("email"));
         tfdiplome.setCellValueFactory(new PropertyValueFactory<>("diplome"));
         tfbio.setCellValueFactory(new PropertyValueFactory<>("bio"));
+        tfstatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+        
 
         // TODO
     }
@@ -93,16 +111,16 @@ public class FormateurController implements Initializable {
     @FXML
     private void ajouterformateur(ActionEvent event) {
 
-        String nom = tfNomformateur.getText();
-        String prenom = tfPrenom.getText();
-        String bio = tfBio.getText();
-        String email = tfEmail.getText();
-        String diplome = tfDiplome.getText();
+        String nom = Anomf.getText();
+        String prenom = Aprenomf.getText();
+        String bio = Abio.getText();
+        String email = Amail.getText();
+        String diplome = Adipkome.getText();
 
-        int telephone = Integer.parseInt(tfTelephone.getText());
-        String status = tfStatus.getText();
+        String telephone = Atlf.getText();
+        String status = Astatus.getText();
 
-        if (tfNomformateur.getText().equals("") || tfBio.getText().equals("") || tfPrenom.getText().equals("") || tfStatus.getText().equals("") || tfTelephone.getText().equals("") || tfemail.getText().equals("") || tfDiplome.getText().equals("")) {
+        if (Anomf.getText().equals("") || Abio.getText().equals("") || Aprenomf.getText().equals("") || Astatus.getText().equals("") || Atlf.getText().equals("") || Amail.getText().equals("") || Adipkome.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "veuillez remplir tous le champs");
         } else {
             Formateur f = new Formateur(nom, prenom, bio, telephone, status, diplome, email);
@@ -126,6 +144,9 @@ public class FormateurController implements Initializable {
             //refresh(list);
 
         }
+          Notifications.create().title("NOTIFICATIONS")
+                    .text("Formation Ajoutée")
+                    .showInformation();
 
     }
 
@@ -143,14 +164,14 @@ public class FormateurController implements Initializable {
             if (result.get() == ButtonType.OK) {
                 Formateur f = new Formateur();
                 f.setIdformateur(selectedFormateur.getIdformateur());
-                f.setTelephone(Integer.parseInt(tfTelephone.getText()));
-                f.setDiplome(tfdiplome.getText());
-                f.setEmail(tfEmail.getText());
-                f.setPrenomformateur(tfPrenom.getText());
-                f.setStatus(tfstatus.getText());
-                f.setNomformateur(tfNomformateur.getText());
-                f.setBio(tfBio.getText());
-
+                f.setTelephone(Atlf.getText());
+                f.setDiplome(Adipkome.getText());
+                f.setEmail(Amail.getText());
+                f.setPrenomformateur(Anomf.getText());
+                f.setStatus(Astatus.getText());
+                f.setNomformateur(Aprenomf.getText());
+                f.setBio(Abio.getText());
+                
                 formateurservice.modifier(f);
 
                 JOptionPane.showMessageDialog(null, "successfully modifiée!");
@@ -163,7 +184,6 @@ public class FormateurController implements Initializable {
                 tfprenom.setCellValueFactory(new PropertyValueFactory<>("prenomformateur"));
                 tftelephone.setCellValueFactory(new PropertyValueFactory<>("telephone"));
                 tfemail.setCellValueFactory(new PropertyValueFactory<>("email"));
-                //tfdiplome.setCellValueFactory(new PropertyValueFactory<>("diplome"));
                 tfdiplome.setCellValueFactory(new PropertyValueFactory<>("diplome"));
                 tfbio.setCellValueFactory(new PropertyValueFactory<>("bio"));
                 tfstatus.setCellValueFactory(new PropertyValueFactory<>("status"));
@@ -172,6 +192,9 @@ public class FormateurController implements Initializable {
                 JOptionPane.showMessageDialog(null, " Failed to delete  ! ");
             }
         }
+          Notifications.create().title("NOTIFICATIONS")
+                    .text("Formation Modifiée")
+                    .showInformation();
     }
 
     @FXML
@@ -205,10 +228,24 @@ public class FormateurController implements Initializable {
                 JOptionPane.showMessageDialog(null, " Failed to delete  ! ");
             }
         }
+        Notifications.create().title("NOTIFICATIONS")
+                    .text("Formation supprimée")
+                    .showInformation();
     }
 
     @FXML
     private void afficherformateur(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void suivantformation(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("Inscription.fxml"));
+         Scene rcScene= new Scene(root);
+    	
+  	     Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+	window.setScene(rcScene);
+	window.show();
     }
 
 }
