@@ -231,7 +231,7 @@ public class InscriptionController implements Initializable {
 
     @FXML
     private void formateursuivant(ActionEvent event) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("formateur.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("formateur.fxml"));//objet d'une sous classe de la classe abstraite
          Scene rcScene= new Scene(root);
     	
   	     Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
