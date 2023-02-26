@@ -20,6 +20,14 @@ Our mission at Jopify is to help job seekers find the perfect job that they will
 
 
 
+<!-- CONTRIBUTING -->
+## 😎 Contributing
+
+If you have a suggestion that would make this project better, please fork the repo and create a pull request. Any contributions you make are **greatly appreciated**.
+Don't forget to give the project a star! Thanks again!
+
+
+
 
 
 
