@@ -29,9 +29,10 @@ Don't forget to give the project a star! Thanks again!
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b Yourbranch`)
 3. Commit your Changes (`git commit -m 'Add some features to project'`)
+4. Push to the Branch (`git push origin Yourbranch`)
+5. Open a Pull Request
 
-
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
