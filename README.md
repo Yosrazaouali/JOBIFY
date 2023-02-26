@@ -26,6 +26,9 @@ Our mission at Jopify is to help job seekers find the perfect job that they will
 If you have a suggestion that would make this project better, please fork the repo and create a pull request. Any contributions you make are **greatly appreciated**.
 Don't forget to give the project a star! Thanks again!
 
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b Yourbranch`)
+3. Commit your Changes (`git commit -m 'Add some features to project'`)
 
 
 
