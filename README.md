@@ -20,6 +20,8 @@ Our mission at Jopify is to help job seekers find the perfect job that they will
 
 
 
+
+
 <!-- CONTRIBUTING -->
 ## 😎 Contributing
 
@@ -35,6 +37,7 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
+<!-- USAGE EXAMPLES -->
+## ⚡ Usage
 
 
