@@ -10,8 +10,8 @@ Our mission at Jopify is to help job seekers find the perfect job that they will
  ### 📜 Project Main features
 1. **:briefcase: job management** 
 2. ** :bulb: Training Management**
-3. **	:calendar: complaint and interviews Management** 
-4. **:tickets:: event Management**
+3. **:calendar: complaint and interviews Management** 
+4. **:tickets: event Management**
 5. **:blue_book: profile and network Management** 
 6. **🙋 Users Management** 
 <p align="right">(<a href="#top">back to top</a>)</p>
