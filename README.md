@@ -1,6 +1,6 @@
 <!-- ABOUT THE PROJECT -->
 ## 📃 About The Project
-<b>"Jopify"</b is an innovative desktop and web application designed to simplify the job search process for both job seekers and recruiters. The platform provides job seekers with personalized job suggestions based on their experience and desired career path, and allows them to search and apply for jobs instantly. Jopify also enables job seekers to upload essential documents such as CVs and diplomas, and showcase their portfolios.
+"Jopify" is an innovative desktop and web application designed to simplify the job search process for both job seekers and recruiters. The platform provides job seekers with personalized job suggestions based on their experience and desired career path, and allows them to search and apply for jobs instantly. Jopify also enables job seekers to upload essential documents such as CVs and diplomas, and showcase their portfolios.
 
 With Jopify, recruiters can add job offers, schedule interviews, and organize professional training and events, including product promotion. The platform is aimed at young people without work, young people looking for training, and young people seeking events.
 
