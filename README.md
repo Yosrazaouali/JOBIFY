@@ -19,7 +19,7 @@ Our mission at Jopify is to help job seekers find the perfect job that they will
 ### 🚀 Built With
 
 
-
+<img src="https://user-images.githubusercontent.com/92873992/221991549-35d4c0e4-acaa-455d-b20a-fcdafa37b093.png" />
 
 
 <!-- CONTRIBUTING -->
