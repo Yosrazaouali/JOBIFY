@@ -7,6 +7,7 @@ With Jopify, recruiters can add job offers, schedule interviews, and organize pr
 Our mission at Jopify is to help job seekers find the perfect job that they will love and provide recruiters with the tools to find the best candidates for their vacancies. Whether you are a job seeker or recruiter, Jopify is the ultimate solution for streamlining the job search process and connecting job seekers with their dream jobs.
   
 
+
  ### 📜 Project Main features
 1. **:briefcase: job management** 
 2. **:bulb: Training Management**
@@ -16,11 +17,8 @@ Our mission at Jopify is to help job seekers find the perfect job that they will
 6. **🙋 Users Management** 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### 🚀 Built With
 
-
-<img src="https://user-images.githubusercontent.com/92873992/221991549-35d4c0e4-acaa-455d-b20a-fcdafa37b093.png" />
-
+This project includes only the managing training section.
 
 <!-- CONTRIBUTING -->
 ## 😎 Contributing
@@ -37,7 +35,5 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-<!-- USAGE EXAMPLES -->
-## ⚡ Usage
 
 
