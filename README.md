@@ -20,7 +20,23 @@ Our mission at Jopify is to help job seekers find the perfect job that they will
 
 This project includes only the managing training section.
 
-<!-- CONTRIBUTING -->
+
+
+  ### 🚀 Built With
+<div align="center">
+  
+   <a>
+  <a href="https://www.scenbuilder.com/">
+ <img src="https://user-images.githubusercontent.com/92873992/224045184-1ccdaa85-1f3f-4c52-b1f8-9eeb49dfa14f.png" title="scenbuilder" width="150" height="150"/>
+  </a>
+       <a>
+ <img src="https://user-images.githubusercontent.com/92873992/224045192-a329ad2a-5fc8-4fd4-ad2d-e03230ec0742.png" title="netbeans" width="150" height="150"/>
+         </a> 
+ </div>
+  
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+  <!-- CONTRIBUTING -->
 ## 😎 Contributing
 
 If you have a suggestion that would make this project better, please fork the repo and create a pull request. Any contributions you make are **greatly appreciated**.
@@ -33,16 +49,4 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-  ### 🚀 Built With
-<div align="center">
-  <a href="https://www.scenbuilder.com/">
- <img src="https://user-images.githubusercontent.com/92873992/224045184-1ccdaa85-1f3f-4c52-b1f8-9eeb49dfa14f.png" title="scenbuilder" width="150" height="150"/>
- 
- <img src="https://user-images.githubusercontent.com/92873992/224045192-a329ad2a-5fc8-4fd4-ad2d-e03230ec0742.png" title="netbeans" width="150" height="150"/>
- </div>
-  
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
