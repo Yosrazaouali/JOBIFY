@@ -29,9 +29,9 @@ This project includes only the managing training section.
   <a href="https://www.scenbuilder.com/">
  <img src="https://user-images.githubusercontent.com/92873992/224045184-1ccdaa85-1f3f-4c52-b1f8-9eeb49dfa14f.png" title="scenbuilder" width="150" height="150"/>
   </a>
-       <a>
+  <a>
  <img src="https://user-images.githubusercontent.com/92873992/224045192-a329ad2a-5fc8-4fd4-ad2d-e03230ec0742.png" title="netbeans" width="150" height="150"/>
-         </a> 
+ </a> 
  </div>
   
 <p align="right">(<a href="#top">back to top</a>)</p>
